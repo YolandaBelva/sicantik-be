@@ -66,6 +66,10 @@ Example (using `psql` CLI):
 ```bash
 createdb sicantik
 ```
+Generate database from prisma
+```bash
+npx prisma migrate dev
+```
 
 ### 5. Start the server
 
