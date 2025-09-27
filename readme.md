@@ -255,6 +255,3 @@ This project follows a **layered architecture** pattern:
 - API endpoint definitions
 - Route-specific middleware application
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
