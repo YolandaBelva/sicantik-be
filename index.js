@@ -12,11 +12,13 @@ app.use(express.json());
 // require routes list
 const socialPostRoute = require("./src/routes/socialPostRoute");
 const flashcardRoute = require("./src/routes/flashcardRoute");
+const workScheduleRoute = require("./src/routes/workScheduleRoute");
 
 
 // routes
 app.use('/social-posts', socialPostRoute);
 app.use('/flashcards', flashcardRoute);
+app.use('/work-schedules', workScheduleRoute);
 
 // start server
 async function startServer() {
