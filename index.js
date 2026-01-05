@@ -11,10 +11,12 @@ app.use(express.json());
 
 // require routes list
 const socialPostRoute = require("./src/routes/socialPostRoute");
+const flashcardRoute = require("./src/routes/flashcardRoute");
 
 
 // routes
-app.use('/social-posts', socialPostRoute)
+app.use('/social-posts', socialPostRoute);
+app.use('/flashcards', flashcardRoute);
 
 // start server
 async function startServer() {
