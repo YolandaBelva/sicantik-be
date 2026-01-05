@@ -10,12 +10,11 @@ app.use(cors());
 app.use(express.json());
 
 // require routes list
-const userRouter = require("./src/routes/userRoute")
+const socialPostRoute = require("./src/routes/socialPostRoute");
 
 
 // routes
-app.use('/user', userRouter)
-
+app.use('/social-posts', socialPostRoute)
 
 // start server
 async function startServer() {

@@ -9,32 +9,33 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String   @db.VarChar(255)
-  content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
+model SocialPost {
+  id         String   @id @default(uuid())
+  title      String
+  content    String
+  username   String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
-model Profile {
-  id     Int     @id @default(autoincrement())
-  bio    String?
-  user   User    @relation(fields: [userId], references: [id])
-  userId Int     @unique
+model Flashcard {
+  id         String   @id @default(uuid())
+  question   String
+  answer     String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }
 
-model User {
-  id      Int      @id @default(autoincrement())
-  email   String   @unique
-  name    String?
-  posts   Post[]
-  profile Profile?
+model WorkSchedule {
+  id             String   @id @default(uuid())
+  title          String
+  description    String
+  start_datetime DateTime
+  end_datetime   DateTime
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
 }
